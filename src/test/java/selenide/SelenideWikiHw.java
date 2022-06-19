@@ -33,13 +33,13 @@ public class SelenideWikiHw {
     @DisplayName("GitHubSoftAssertionTest")
     void gitHubSoftAssertionTest() {
 
-       // - Откройте страницу Selenide в Github
+        // - Откройте страницу Selenide в Github
         open("https://github.com/selenide/selenide");
 
         // - Перейдите в раздел Wiki проекта
         $("#wiki-tab").click();
 
-       // - Убедитесь, что в списке страниц (Pages) есть страница SoftAssertions
+        // - Убедитесь, что в списке страниц (Pages) есть страница SoftAssertions
         $("ul li.wiki-more-pages-link").$("button").click();
         $("ul[data-filterable-for=wiki-pages-filter]");
 
@@ -47,7 +47,6 @@ public class SelenideWikiHw {
         $(byText("SoftAssertions")).click();
         $$(".markdown-body h4").findBy(text("JUnit5"))
                 .shouldHave(text("Using JUnit5 extend test class:"));
+
     }
-
-
 }
